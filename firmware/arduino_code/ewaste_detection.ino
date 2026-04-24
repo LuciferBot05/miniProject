@@ -1,7 +1,6 @@
 #include <Servo.h>
 
 Servo sorter;
-
 int sensorPin = 7;
 
 void setup() {
@@ -20,11 +19,10 @@ void loop() {
 
     delay(2000);
 
-    sorter.write(90);  
+    sorter.write(90);
     delay(2000);
 
-    sorter.write(0);  
+    sorter.write(0);
     delay(2000);
   }
-
 }
