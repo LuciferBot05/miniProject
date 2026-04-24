@@ -9,14 +9,12 @@ labels = ["battery","circuit_board","mobile","cable"]
 cap = cv2.VideoCapture(0)
 
 while True:
-
     ret, frame = cap.read()
 
     img = cv2.resize(frame,(224,224))
     img = np.reshape(img,[1,224,224,3])
 
     prediction = model.predict(img)
-
     label = labels[np.argmax(prediction)]
 
     cv2.putText(frame,label,(20,50),
