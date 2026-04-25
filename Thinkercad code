@@ -1,0 +1,44 @@
+#include <Servo.h>
+
+Servo sorter;
+
+int sensorPin = 7;
+int wasteType = 0;
+
+void setup() {
+  pinMode(sensorPin, INPUT);
+  sorter.attach(9);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int objectDetected = digitalRead(sensorPin);
+
+  if(objectDetected == HIGH)
+  {
+    delay(1000);
+
+    // Simulate AI classification
+    wasteType = random(1,4);
+
+    if(wasteType == 1)
+    {
+      Serial.println("Battery detected");
+      sorter.write(30);
+    }
+    else if(wasteType == 2)
+    {
+      Serial.println("Cable detected");
+      sorter.write(90);
+    }
+    else if(wasteType == 3)
+    {
+      Serial.println("Mobile detected");
+      sorter.write(150);
+    }
+
+    delay(2000);
+    sorter.write(0);
+  }
+}
