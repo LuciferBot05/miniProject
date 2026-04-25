@@ -24,5 +24,15 @@ void loop() {
 
     sorter.write(0);
     delay(2000);
+
+    if(Serial.available())
+{
+  char data = Serial.read();
+
+  if(data == '1') sorter.write(30);
+  else if(data == '2') sorter.write(60);
+  else if(data == '3') sorter.write(90);
+  else if(data == '4') sorter.write(120);
+}
   }
 }
