@@ -6,6 +6,10 @@
 
 ---
 
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Arduino](https://img.shields.io/badge/Arduino-Hardware-green)
+![AI](https://img.shields.io/badge/AI-ComputerVision-orange)
+
 ## 📌 Overview
 
 This project uses **AI + Arduino + Sensors** to automatically detect and classify e-waste and sort it into correct recycling bins.
@@ -30,24 +34,29 @@ This project uses **AI + Arduino + Sensors** to automatically detect and classif
 
 ---
 
-## 📁 Project Structure
+## 📁 Folder Structure
 
-docs → report & diagrams
-hardware → circuit & components
-firmware → Arduino code
-ai_model → AI training & prediction
-software → dashboard
-images → project photos
+firmware → Arduino code  
+ai_model → AI training & prediction  
+software → dashboard  
+hardware → circuit details  
+docs → report  
+images → project photos  
 
 ---
 
-## 🚀 How it Works
+## 🚀 How to Run
 
-1. Waste inserted
-2. Sensor detects object
-3. Camera captures image
-4. AI classifies waste
-5. Servo sorts waste
+1. Install dependencies  
+pip install -r requirements.txt  
+
+2. Upload Arduino code  
+
+3. Run AI model  
+python predict.py  
+
+4. Run dashboard  
+python app.py  
 
 ---
 ## 🔄 Complete Working Flow
@@ -60,3 +69,9 @@ images → project photos
 6. Servo rotates to correct bin  
 7. Data is stored and displayed  
 
+## 🔮 Future Scope
+
+- IoT integration  
+- Mobile app  
+- Cloud storage  
+- Advanced AI model  
