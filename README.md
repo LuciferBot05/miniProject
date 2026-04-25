@@ -50,5 +50,13 @@ images → project photos
 5. Servo sorts waste
 
 ---
+## 🔄 Complete Working Flow
 
+1. User inserts e-waste into bin  
+2. IR sensor detects object  
+3. Camera captures image  
+4. AI model classifies waste  
+5. Python sends signal to Arduino  
+6. Servo rotates to correct bin  
+7. Data is stored and displayed  
 
