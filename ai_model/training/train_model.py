@@ -1,13 +1,13 @@
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Conv2D,MaxPooling2D,Flatten,Dense
+from tensorflow.keras.preprocessing.image import ImageDataGenerator # type: ignore
+from tensorflow.keras.models import Sequential # type: ignore
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense # pyright: ignore[reportMissingModuleSource]
 
 train = ImageDataGenerator(rescale=1./255)
 
 dataset = train.flow_from_directory(
-    "dataset",
+    "C:/Users/saini/ewaste_ai/dataset",
     target_size=(224,224),
-    batch_size=32,
+    batch_size=16,
     class_mode='categorical'
 )
 
@@ -24,8 +24,10 @@ model.add(Flatten())
 model.add(Dense(128,activation='relu'))
 model.add(Dense(4,activation='softmax'))
 
-model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
+model.compile(optimizer='adam',
+              loss='categorical_crossentropy',
+              metrics=['accuracy'])
 
-model.fit(dataset,epochs=10)
+model.fit(dataset, epochs=5)
 
-model.save("ewaste_classifier.h5")
+model.save("../model/ewaste_classifier.h5")
