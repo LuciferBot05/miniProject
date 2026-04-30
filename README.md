@@ -113,7 +113,8 @@ miniProject/
 ├── train_model.py
 └── README.md
 ```
-
+## How It Works
+Sensor detects object → AI classifies → Arduino receives signal → Servo sorts waste.
 ---
 
 ## 📈 Performance
